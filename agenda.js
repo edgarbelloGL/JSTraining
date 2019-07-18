@@ -1,5 +1,17 @@
 var dom = document;
 var names = ["Ed", "Andres", "Maria", "Sergio", "Dany"];
+console.log(names);
+document.getElementById("fixNameSection").style.display = "none";
+
+//--------------------------------------- CREATE ---------------------------------------
+function addNewName() {
+    let newName = dom.getElementById("nameInput").value;
+    names.push(newName);
+    console.log(names);
+    dom.getElementById("actionResult").innerHTML = "Add New Name Success: " + newName;
+};
+
+//--------------------------------------- Read ---------------------------------------
 
 function showNames() {
     var ul = dom.getElementById("nameList");
@@ -12,17 +24,11 @@ function showNames() {
     });
 }
 
-function addNewName() {
-    let newName = dom.getElementById("nameInput").value;
-    names.push(newName);
-    console.log(names);
-    dom.getElementById("actionResult").innerHTML = "Add New Name Success: " + newName;
-};
+//--------------------------------------- Update ---------------------------------------
 
 function updateName() {
     document.getElementById("fixNameSection").style.display = "";
 };
-
 
 function fixName() {
     let editName = dom.getElementById("nameInput").value;
@@ -33,15 +39,6 @@ function fixName() {
         dom.getElementById("actionResult").innerHTML = "Name Not Found";
     }
     document.getElementById("fixNameSection").style.display = "none";
-};
-
-function removeName() {
-    let removeName = dom.getElementById("nameInput").value;
-    if (removeNameArray(removeName)) {
-        dom.getElementById("actionResult").innerHTML = "Remove Name Success: " + removeName + " Removed";
-    } else {
-        dom.getElementById("actionResult").innerHTML = "Remove Name Not Found";
-    }
 };
 
 function updateNameArray(editName, fixedName) {
@@ -55,6 +52,17 @@ function updateNameArray(editName, fixedName) {
     console.log(names);
     return changed;
 }
+
+//--------------------------------------- Remove ---------------------------------------
+
+function removeName() {
+    let removeName = dom.getElementById("nameInput").value;
+    if (removeNameArray(removeName)) {
+        dom.getElementById("actionResult").innerHTML = "Remove Name Success: " + removeName + " Removed";
+    } else {
+        dom.getElementById("actionResult").innerHTML = "Remove Name Not Found";
+    }
+};
 
 function removeNameArray(removeName) {
     var removed = false;
@@ -74,5 +82,4 @@ function clearNames() {
     dom.getElementById("actionResult").innerHTML = "Clear All Names Success!";
 };
 
-console.log(names);
-document.getElementById("fixNameSection").style.display = "none";
+//--------------------------------------- EOF ---------------------------------------
