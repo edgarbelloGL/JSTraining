@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title> JS Level Up</title>
 </head>
+
 <body>
 
-<h1>My First Heading</h1>
+    <h1>Agenda 2.0</h1>
 
-<p>My first paragraph.</p>
-
-<script src="agenda.js"></script>
+    <p>Please Add your name.</p>
+    <span> Input:</span>
+    <div><input id="nameInput"></div>
+    <span> -------------------------------------- </span>
+    <div>
+        <span> Create:</span>
+        <div> <button id="addName" onclick="addNewName()">Add Name</button></div>
+    </div>
+    <div>
+        <span> Read:</span>
+        <div> <button id="showNames" onclick="showNames()">Show Names</button> </div>
+    </div>
+    <div>
+        <span> Update:</span>
+        <div> <button id="updateName" onclick="updateName()">Update Name</button></div>
+        <div id="fixNameSection">
+            <input id="fixNameInput">
+            <button id="fixName" onclick="fixName()">Fix Name</button>
+        </div>
+    </div>
+    <div>
+        <span> Delete:</span>
+        <div><button id="removeName" onclick="removeName()">Remove Name</button> </div>
+        <div> <button id="clearNames" onclick="clearNames()">Clear Names</button></div>
+    </div>
+    <div> <span id="actionResult"></span></div>
+    <span> -------------------------------------- </span>
+    <div>
+        <span> Output:</span>
+        <ul id="nameList">
+        </ul>
+    </div>
+    <script src="agenda.js"></script>
 
 </body>
+
 </html>
