@@ -24,6 +24,12 @@ function showNames() {
     });
 }
 
+function clearNames() {
+    var ul = dom.getElementById("nameList");
+    ul.innerHTML = "";
+    dom.getElementById("actionResult").innerHTML = "Clear All Names Success!";
+};
+
 //--------------------------------------- Update ---------------------------------------
 
 function updateName() {
@@ -75,11 +81,5 @@ function removeNameArray(removeName) {
     console.log(names);
     return removed;
 }
-
-function clearNames() {
-    var ul = dom.getElementById("nameList");
-    ul.innerHTML = "";
-    dom.getElementById("actionResult").innerHTML = "Clear All Names Success!";
-};
 
 //--------------------------------------- EOF ---------------------------------------
